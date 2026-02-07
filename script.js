@@ -88,3 +88,12 @@ function heartBurst(card) {
   }
 }
 
+document.addEventListener("click", () => {
+  const music = document.getElementById("bg-music");
+
+  if (music && music.paused) {
+    music.play().catch(err => {
+      console.log("Music play blocked:", err);
+    });
+  }
+}, { once: true });
