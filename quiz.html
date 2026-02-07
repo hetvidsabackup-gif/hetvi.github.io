@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Love Quiz 💕</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="fade-in">
+<audio autoplay loop>
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+
+<h1>Our Little Memory Test 💭💖</h1>
+<p class="subtitle">Be honest… I’m watching 👀</p>
+
+<div class="quiz-card">
+  <h3>📅 When did we first meet?</h3>
+  <div class="options">
+    <button onclick="quizAnswer(this,false,1)">1st August 2022</button>
+    <button onclick="quizAnswer(this,false,1)">4th August 2022</button>
+    <button onclick="quizAnswer(this,false,1)">9th August 2022</button>
+    <button onclick="quizAnswer(this,true,1)">16th August 2022</button>
+  </div>
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz-card">
+  <h3>💋 When did we first kiss?</h3>
+  <div class="options">
+    <button onclick="quizAnswer(this,false,2)">12 November 2023</button>
+    <button onclick="quizAnswer(this,false,2)">19 November 2023</button>
+    <button onclick="quizAnswer(this,true,2)">5 December 2023</button>
+    <button onclick="quizAnswer(this,false,2)">7 December 2023</button>
+  </div>
+  <p class="feedback"></p>
+</div>
+
+<div class="quiz-card">
+  <h3>✈️ Your favourite trip with me?</h3>
+  <div class="options">
+    <button onclick="allWrongTrip(this)">Alibaugh</button>
+    <button onclick="allWrongTrip(this)">Mahabaleshwar</button>
+    <button onclick="allWrongTrip(this)">Udaipur</button>
+    <button onclick="allWrongTrip(this)">Goa</button>
+  </div>
+  <p class="feedback">
+    Wrong 😜 Correct answer is — <b>ALL OF THE ABOVE ❤️</b>
+  </p>
+</div>
+
+<a href="week.html" class="btn">Continue 💞</a>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

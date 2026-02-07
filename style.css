@@ -1,0 +1,272 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #fbeff4;
+}
+
+
+.container {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.center {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: white;
+  color: #ff4d6d;
+  padding: 12px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.fade-in {
+  animation: fade 1.5s ease;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; }
+}
+
+.quiz button {
+  display: block;
+  margin: 8px 0;
+  width: 100%;
+}
+
+/* More spacing around the grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 24px;         /* bigger spacing between cards */
+  margin: 40px 0 80px 0; /* vertical spacing above & below */
+  padding: 0 10px;   /* side padding on mobile */
+}
+
+/* Card spacing and size improvements */
+.card {
+  background: rgba(255,255,255,0.15);
+  padding: 28px 18px; /* more inside padding */
+  border-radius: 25px;
+  text-align: center;
+  transition: 0.4s;
+  min-height: 220px;  /* ensure even height */
+}
+
+
+.card img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(255,105,135,0.4);
+}
+
+
+/* Floating Hearts */
+.heart {
+  position: fixed;
+  bottom: -10px;
+  font-size: 18px;
+  animation: floatUp 6s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Flip Cards */
+.flip-card {
+  background: transparent;
+  width: 100%;
+  height: 230px;
+  perspective: 1000px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip-card.flipped .flip-inner {
+  transform: rotateY(180deg);
+}
+
+
+/* Front & Back */
+.flip-front, .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 25px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.flip-front img {
+  width: 85px;
+  margin-bottom: 10px;
+}
+
+.flip-front h4 {
+  margin: 0;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  font-size: 1.05rem;
+  text-align: center;
+  line-height: 1.5;
+  color: #fff;
+}
+
+/* Penguin Wiggle */
+.flip-front img {
+  animation: wiggle 2.5s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(4deg); }
+  50% { transform: rotate(-4deg); }
+  75% { transform: rotate(3deg); }
+}
+
+.flip-card:active img {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+/* Quiz Aesthetic */
+.quiz-card {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  animation: fade 1s ease;
+}
+
+.quiz-card h3 {
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.options {
+  display: grid;
+  gap: 10px;
+}
+
+.options button {
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.options button:hover {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.35);
+}
+
+.options button.correct {
+  background: #4caf50;
+  color: white;
+}
+
+.options button.wrong {
+  background: #ff4d6d;
+  color: white;
+}
+
+.feedback {
+  margin-top: 15px;
+  font-size: 1.05rem;
+  animation: fade 0.6s ease;
+}
+
+.quiz-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quiz-card {
+  width: 100%;
+  max-width: 380px;
+  padding: 30px 22px;
+}
+
+.quiz-card h3 {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
+.options button {
+  font-size: 1rem;
+  padding: 14px;
+}
+
+.feedback {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.final-btn-container {
+  text-align: center;
+  margin-top: 30px;
+  padding-bottom: 40px; /* ensures it’s not cutoff on mobile */
+}
+
+.final-btn-container .btn {
+  font-size: 1.2rem;
+  padding: 14px 26px;
+}
